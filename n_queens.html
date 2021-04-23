@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+-->
+<html>
+	<head>
+		<title>NQueens</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="n_queens.html">N-Queens Problem</a></li>
+							<li><a href="pathfinding_algs.html">Pathfinding Algorithms</a></li>
+							<li><a href="random_map.html">Dungeon Game Demo</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>N-Queens Problem</h1>
+							<p>A common problem presented for intelligent agents is the 8/N queens problem. In this problem an agent attempts to place queens on a chessboard without them being able to capture each other.
+							For an empty chessboard the most number of queens that can be placed on the board is 8, one for each row or column. An alternate problem involving barriers modifies the maximum number thus creating
+							the N-Queens problem.</p>
+
+							<span class="image">
+								<img src="/images/board_example.png" alt="Board Example">
+							</span>
+
+							<p>
+								Methods involving backtracking are typically used to solve this problem; however, for a short term project I solved this problem using an genetic algorithm.
+								The aim of this project was to place as many queens on the board but I considered the maximum heuristic to be 9. The reason for this was part of how I
+								decided to place my queens. I placed one queen for ever column for the board which would allow my agent to ignore vertical collisions. 
+							</p>
+							<p>
+								From there it was the task of using a genetic algorithm to place the queens on the board and check for collisions. For each generation I set the score to 9 and
+								subtracted from that score for each collision that occured. For the crossover I would first reduce the population by at most half based on a survival threshold.
+								Basically, in order for a member of the current generation to reproduce they would need to get a score above the survival threshold. If they did then they would be
+								crossbred for the next generation.
+							</p>
+							<p>
+								Additionally I also randomly mixed the population once they were selected to breed. This was done in hopes of avoiding local maximums and ensure that the desired
+								heuristic would be met. While there was a few complications I eventually was able to tweak the agent to reach the desired heuristic. I do acknowledge that it may be
+								possible to achieve a higher score if placing the queens on each row (possibly 11 in this case) and its something I want to consider attempting in the future.
+							</p>
+								<span class="image">
+									<img src="/images/final_heuristic.png" alt="Final Heuristic">
+								</span>
+							<p>
+								This project can be found at: <a href=https://github.com/kyleacastillo1999/NQueens>Here</a>
+							</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/kyleacastillo1999" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/kyleacastillo/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
